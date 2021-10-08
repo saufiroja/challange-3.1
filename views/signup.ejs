@@ -1,23 +1,53 @@
 <%- include("partials/head") %>
 
-<div class="container mt-4">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <h2 class="text-center">Sign Up</h2>
+<form action="/signup">
+  <h2>Signup</h2>
+  <label for="name">username</label>
+  <input type="text" name="name" required />
+  <div class="email error"></div>
+  <label for="password">Password</label>
+  <input type="password" name="password" required />
+  <div class="password error"></div>
+  <button>signup</button>
+</form>
 
-      <form action="/signup" method="POST">
-        <div class="mb-3">
-          <label for="name" class="form-label">Username</label>
-          <input type="text" class="form-control" id="name" />
-        </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" />
-        </div>
-        <button type="submit" class="btn btn-primary">Sign Up</button>
-      </form>
-    </div>
-  </div>
-</div>
+<script>
+  const form = document.querySelector("form");
+  const emailError = document.querySelector(".email.error");
+  const passwordError = document.querySelector(".password.error");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // reset error
+    emailError.textContent = "";
+    passwordError.textContent = "";
+
+    // value
+    const username = form.name.value;
+    const password = form.password.value;
+
+    try {
+      const res = await fetch("/signup", {
+        method: "POST",
+        body: JSON.stringify({ username, password }),
+        headers: { "Content-Type": "application/json" },
+      });
+      const data = await res.json();
+      console.log(data);
+
+      if (data.errors) {
+        emailError.textContent = data.errors.email;
+        passwordError.textContent = data.errors.password;
+      }
+
+      if (data.newUser) {
+        location.assign("/");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  });
+</script>
 
 <%- include("partials/foot") %>
