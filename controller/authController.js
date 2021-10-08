@@ -1,14 +1,38 @@
-const data = require("../data/db.json");
+const database = require("../data/db.json");
 const fs = require("fs");
+const { v4: uuidv4 } = require("uuid");
 const jwt = require("jsonwebtoken");
-const { json } = require("express");
 
-// const maxAge = 3 * 24 * 60 * 60;
-// const createToken = (id) => {
-//   return jwt.sign({ id }, "secret", {
-//     expiresIn: maxAge,
-//   });
-// };
+// error handling
+const handleErrors = (err) => {
+  console.log(err.msg, err.code);
+  let errors = { username: "", password: "" };
+
+  // incorrect username
+  if (err.message === "Incorrect username") {
+    errors.username = "That username is not registered";
+    return errors;
+  }
+
+  // incorrect password
+  if (err.message === "Incorrect password") {
+    errors.password = "That password is incorrect";
+    return errors;
+  }
+
+  // duplicate error code
+  if (err.code === 11000) {
+    errors.username = "That username is already registered";
+    return errors;
+  }
+};
+
+const maxAge = 3 * 24 * 60 * 60;
+const createToken = (id) => {
+  return jwt.sign({ id }, "secret", {
+    expiresIn: maxAge,
+  });
+};
 
 // sign up get
 module.exports.signup_get = (req, res) => {
@@ -25,59 +49,51 @@ module.exports.signup_post = (req, res) => {
   const { username, password } = req.body;
 
   try {
-    const saveData = (data) => {
-      fs.writeFileSync("data/db.json", JSON.stringify(data));
+    const newUser = {
+      id: uuidv4(),
+      username,
+      password,
     };
 
-    let foundUser = data.find((json) => {
-      return json.username === username;
-    });
+    database.push(newUser);
+    fs.writeFileSync("./data/db.json", JSON.stringify(database));
 
-    if (!foundUser) {
-      let newUser = {
-        id: Date.now(),
-        username,
-        password,
-      };
-      data.push(newUser);
-      saveData(data);
-      // console.log(data);
-    }
-  } catch (error) {
-    console.log(error);
+    const token = createToken(newUser.id);
+
+    res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
+
+    res.status(200).json({ newUser: newUser.id });
+  } catch (err) {
+    const errors = handleErrors(err);
+    res.status(400).json({ errors });
   }
-
-  // res.redirect("/");
-  return res.status(200).json({
-    message: "success",
-  });
 };
 
 // log in post
 module.exports.login_post = (req, res) => {
   const { username, password } = req.body;
+
   try {
-    const exists = data.find((data) => {
-      return data.username === username;
-    });
+    const login = (username, password) => {
+      const findUser = database.find((user) => user.username === username);
+      if (findUser) {
+        const auth = findUser.password;
+        if (auth) {
+          return findUser;
+        }
+        throw Error("Incorrect password");
+      }
+      throw Error("Incorrect username");
+    };
 
-    if (!exists) {
-      res.json({
-        message: "user not found",
-      });
-    }
+    const userLogin = login(username, password);
+    const token = createToken(userLogin.id);
 
-    if (exists.password !== password) {
-      res.json({
-        message: "password salah",
-      });
-    }
+    res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
 
-    res.redirect("/");
-    // return res.status(200).json({
-    //   message: "success",
-    // });
-  } catch (error) {
-    console.log(error);
+    res.status(200).json({ userLogin: userLogin.id });
+  } catch (err) {
+    const errors = handleErrors(err);
+    res.status(400).json({ errors });
   }
 };
