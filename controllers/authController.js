@@ -77,7 +77,7 @@ module.exports.login_post = (req, res) => {
     const login = (username, password) => {
       const findUser = database.find((user) => user.username === username);
       if (findUser) {
-        const auth = findUser.password;
+        const auth = database.find((user) => user.password === password);
         if (auth) {
           return findUser;
         }
