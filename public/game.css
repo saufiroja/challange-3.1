@@ -1,0 +1,76 @@
+body {
+  background: rgba(156, 131, 95, 1);
+}
+
+section {
+  display: flex;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  text-align: center;
+}
+
+.back {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.logo {
+  margin-left: 3rem;
+}
+
+.text {
+  font-size: 1.3rem;
+  color: rgba(249, 178, 61, 1);
+  margin-left: 3rem;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.5rem 0;
+}
+
+li:hover {
+  background-color: wheat;
+}
+
+.player {
+  display: flex;
+  align-self: flex-start;
+  position: absolute;
+  margin-right: 30rem;
+}
+.com {
+  display: flex;
+  align-self: flex-start;
+  position: absolute;
+  margin-left: 33rem;
+}
+
+.vs {
+  width: 10rem;
+  height: 5rem;
+  font-size: 3rem;
+  text-align: center;
+  color: white;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
