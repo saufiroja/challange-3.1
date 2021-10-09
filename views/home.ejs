@@ -1,0 +1,483 @@
+<%- include("partials/header") %>
+
+<!-- NAVBAR -->
+<nav
+class="navbar navbar-expand-lg navbar-dark bg-dark"
+style="opacity: 0.8"
+>
+<div class="container">
+  <a class="navbar-brand me-5" href="#">LOGO</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active ms-3" aria-current="page" href="#"
+          >HOME</a
+        >
+      </li>
+      <li class="nav-item ms-3">
+        <a class="nav-link" href="#">WORK</a>
+      </li>
+      <li class="nav-item ms-3">
+        <a class="nav-link" href="#">CONTACT</a>
+      </li>
+      <li class="nav-item ms-3">
+        <a class="nav-link" href="#">ABOUT ME</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item ms-3" style="color: white; padding-top: 7px;">
+        
+          </li>
+          <li class="nav-item ms-3">
+            <a class="nav-link" href="/logout">LOG OUT</a>
+          </li>
+    
+          <li class="nav-item ms-3">
+            <a class="nav-link" href="/signup">SIGN UP</a>
+          </li>
+          <li class="nav-item ms-3">
+            <a class="nav-link" href="/login">LOGIN</a>
+          </li>
+
+    </ul>
+  </div>
+</div>
+</nav>
+
+<!-- page 1 -->
+<div class="bg-image">
+      <main class="px-3 text-center text-white" style="padding-top: 220px">
+        <h1>PLAY TRADITIONAL GAME</h1>
+        <h3 class="lead">Experience new traditional game play</h3>
+        <p class="lead pt-4">
+          <a href="/game" class="btn btn-warning fw-bold" style="width: 15rem"
+            >PLAY NOW</a
+          >
+        </p>
+      </main>
+      <div class="text-center text-white" style="padding-top: 450px">
+        <p class="lead">
+          THE STORY<i
+            class="bi bi-caret-down"
+            style="font-size: 40px; display: block"
+          ></i>
+        </p>
+      </div>
+    </div>
+</div>
+
+<!-- page 2 -->
+<section class="image-2">
+  <div class="conatiner" style="padding-top: 270px">
+    <div class="row justify-content-center gx-0">
+      <div class="col-md-3 text-white">
+        <h3>What’s so special?</h3>
+        <h1>THE GAMEs</h1>
+      </div>
+      <div class="col-md-7">
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="./assets/assets/rockpaperstrategy-1600.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./assets/assets/rockpaperstrategy-1600.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./assets/assets/rockpaperstrategy-1600.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- page 3 -->
+<div class="image-3">
+  <div class="container">
+    <div class="row justify-content-end" style="padding-top: 20rem">
+      <div class="col-md-4 text-white">
+        <h3>What’s so special?</h3>
+      </div>
+    </div>
+    <div class="row justify-content-end">
+      <div class="col-md-4 text-white">
+        <h1>FEATURES</h1>
+      </div>
+    </div>
+    <div class="row justify-content-end">
+      <div class="col-md-4 text-white">
+        <section class="list-style pt-5">
+          <ul>
+            <li><h3 class="text-warning">TRADTIONAL GAMES</h3></li>
+            <p>
+              If you miss your childhood, we provide many traditional games here
+            </p>
+            <li class="circle">
+              <h3 class="text-warning pt-4">GAME SUIT</h3>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <div class="row justify-content-end">
+      <div class="col-md-4 text-white">
+        <section class="list-style pt-5">
+          <ul>
+            <li class="circle">
+              <h3 class="text-warning pt-4">TBD</h3>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- page 4 -->
+<div class="image-4">
+  <div class="container pt-5">
+    <div class="row text-center pt-5 text-white">
+      <div class="col-md">
+        <h4>Can My Computer Run this game?</h4>
+      </div>
+    </div>
+    <div class="row text-white pt-5">
+      <div class="col-md">
+        <h1>SYSTEM</h1>
+        <h1>REQUIRMENTS</h1>
+      </div>
+    </div>
+    <div class="row justify-content-start">
+      <div class="col-md-4 border border-bottom-0">
+        <h3 class="os text-warning">OS:</h3>
+        <h5 class="text-white mb-5">
+          Windows 7 64-bit only (No OSX support at this time)
+        </h5>
+      </div>
+      <div class="col-md-4 border border-bottom-0">
+        <h3 class="prosesor text-warning">PROCESSOR:</h3>
+        <h5 class="text-white">
+          Intel Core 2 Duo @ 2.4 GHZ or AMD Athlon X2 @ 2.8 GHZ
+        </h5>
+      </div>
+    </div>
+    <div class="row justify-content-start">
+      <div class="col-md-4 border">
+        <h3 class="os text-warning">MEMORY:</h3>
+        <h5 class="text-white mb-5">4 GB RAM</h5>
+      </div>
+      <div class="col-md-4 border">
+        <h3 class="prosesor text-warning">storage:</h3>
+        <h5 class="text-white mb-5">8 GB available space</h5>
+      </div>
+    </div>
+    <div class="row justify-content-start">
+      <div class="col-md-8 border">
+        <h3 class="os text-warning">GRAPHICS:</h3>
+        <h5 class="text-white mb-5">
+          NVIDIA GeForce GTX 660 2GB or AMD Radeon HD 7850 2GB DirectX11 (Shader
+          Model 5)
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- page 5 -->
+<div class="image-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-sm-12 text-white" style="padding-top: 25rem">
+        <h1>TOP SCORES</h1>
+        <h4>This top score from various games provided on this platform</h4>
+        <button
+          type="button"
+          class="btn btn-warning fw-bold mt-5"
+          style="width: 15rem; height: 3rem"
+        >
+          see more
+        </button>
+      </div>
+      <div class="col-lg-6 col-sm-12 text-white" style="padding-top: 15rem">
+        <!-- quotes 1 -->
+        <div style="background: rgba(255, 255, 255, 0.08)">
+          <div
+            class="px-3 py-3 d-flex align-items-center justify-content-between"
+          >
+            <div class="d-flex items-center">
+              <div class="d-flex bd-highlight me-5">
+                <img
+                  class="rounded-circle"
+                  src="quotes/image 8.jpg"
+                  style="height: 55px; width: 55px"
+                />
+              </div>
+              <div
+                class="text-white p-2 flex-shrink-1 bd-highlight flex-column"
+              >
+                <h4 class="text-warning">Evan Lahti</h4>
+                <p>PC Gamer</p>
+              </div>
+            </div>
+            <a class="text-white">
+              <svg
+                width="29"
+                height="25"
+                viewBox="0 0 19 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  opacity="0.3"
+                  d="M18.3981 2.41449C17.7231 2.70013 17.0072 2.88765 16.2741 2.97084C17.0365 2.53297 17.623 1.84099 17.899 1.01526C17.1731 1.42694 16.3789 1.71699 15.5508 1.87286C14.8519 1.15947 13.8744 0.755389 12.8519 0.757085C10.8105 0.757085 9.15361 2.33909 9.15361 4.29061C9.15361 4.5679 9.18627 4.83816 9.25021 5.09623C6.17639 4.94862 3.45216 3.54236 1.62787 1.404C1.30934 1.92529 1.12764 2.53297 1.12764 3.18076C1.12764 4.40623 1.78024 5.48805 2.77231 6.12188C2.18494 6.10468 1.61046 5.95309 1.09706 5.67983V5.7249C1.09706 7.43659 2.37189 8.86495 4.06278 9.19027C3.5182 9.3312 2.94722 9.35187 2.39305 9.25072C2.86384 10.6549 4.22998 11.6764 5.8475 11.7061C4.5821 12.6524 2.98781 13.2184 1.25483 13.2184C0.960153 13.2181 0.66574 13.2015 0.373047 13.1689C2.00943 14.1713 3.95365 14.7571 6.04185 14.7571C12.8438 14.7571 16.5627 9.37118 16.5627 4.70056C16.5627 4.54779 16.5627 4.39502 16.5513 4.24335C17.2749 3.74295 17.8998 3.12372 18.3969 2.41449H18.3981Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+          </div>
+          <div>“One of my gaming highlights of the year.”</div>
+          <div>
+            <p style="color: rgba(255, 255, 255, 0.5)">June 18, 2021</p>
+          </div>
+        </div>
+
+        <!-- quotes 2 -->
+        <div style="background: rgba(255, 255, 255, 0.08)">
+          <div
+            class="px-3 py-3 d-flex align-items-center justify-content-between"
+          >
+            <div class="d-flex items-center">
+              <div class="d-flex bd-highlight me-5">
+                <img
+                  class="rounded-circle"
+                  src="quotes/image.png"
+                  style="height: 55px; width: 55px"
+                />
+              </div>
+              <div
+                class="text-white p-2 flex-shrink-1 bd-highlight flex-column"
+              >
+                <h4 class="text-warning">Jada Griffin</h4>
+                <p>Nerdreactor</p>
+              </div>
+            </div>
+            <a class="text-white">
+              <svg
+                width="29"
+                height="25"
+                viewBox="0 0 19 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  opacity="0.3"
+                  d="M18.3981 2.41449C17.7231 2.70013 17.0072 2.88765 16.2741 2.97084C17.0365 2.53297 17.623 1.84099 17.899 1.01526C17.1731 1.42694 16.3789 1.71699 15.5508 1.87286C14.8519 1.15947 13.8744 0.755389 12.8519 0.757085C10.8105 0.757085 9.15361 2.33909 9.15361 4.29061C9.15361 4.5679 9.18627 4.83816 9.25021 5.09623C6.17639 4.94862 3.45216 3.54236 1.62787 1.404C1.30934 1.92529 1.12764 2.53297 1.12764 3.18076C1.12764 4.40623 1.78024 5.48805 2.77231 6.12188C2.18494 6.10468 1.61046 5.95309 1.09706 5.67983V5.7249C1.09706 7.43659 2.37189 8.86495 4.06278 9.19027C3.5182 9.3312 2.94722 9.35187 2.39305 9.25072C2.86384 10.6549 4.22998 11.6764 5.8475 11.7061C4.5821 12.6524 2.98781 13.2184 1.25483 13.2184C0.960153 13.2181 0.66574 13.2015 0.373047 13.1689C2.00943 14.1713 3.95365 14.7571 6.04185 14.7571C12.8438 14.7571 16.5627 9.37118 16.5627 4.70056C16.5627 4.54779 16.5627 4.39502 16.5513 4.24335C17.2749 3.74295 17.8998 3.12372 18.3969 2.41449H18.3981Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+          </div>
+          <div>
+            “The next big thing in the world of streaming and survival games.”
+          </div>
+          <div>
+            <p style="color: rgba(255, 255, 255, 0.5)">July 10, 2021</p>
+          </div>
+        </div>
+
+        <!-- quotes 3 -->
+        <div style="background: rgba(255, 255, 255, 0.08)">
+          <div
+            class="px-3 py-3 d-flex align-items-center justify-content-between"
+          >
+            <div class="d-flex items-center">
+              <div class="d-flex bd-highlight me-5">
+                <img
+                  class="rounded-circle"
+                  src="quotes/image(1).png"
+                  style="height: 55px; width: 55px"
+                />
+              </div>
+              <div
+                class="text-white p-2 flex-shrink-1 bd-highlight flex-column"
+              >
+                <h4 class="text-warning">Aaron Williams</h4>
+                <p>Uproxx</p>
+              </div>
+            </div>
+            <a class="text-white">
+              <svg
+                width="29"
+                height="25"
+                viewBox="0 0 19 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  opacity="0.3"
+                  d="M18.3981 2.41449C17.7231 2.70013 17.0072 2.88765 16.2741 2.97084C17.0365 2.53297 17.623 1.84099 17.899 1.01526C17.1731 1.42694 16.3789 1.71699 15.5508 1.87286C14.8519 1.15947 13.8744 0.755389 12.8519 0.757085C10.8105 0.757085 9.15361 2.33909 9.15361 4.29061C9.15361 4.5679 9.18627 4.83816 9.25021 5.09623C6.17639 4.94862 3.45216 3.54236 1.62787 1.404C1.30934 1.92529 1.12764 2.53297 1.12764 3.18076C1.12764 4.40623 1.78024 5.48805 2.77231 6.12188C2.18494 6.10468 1.61046 5.95309 1.09706 5.67983V5.7249C1.09706 7.43659 2.37189 8.86495 4.06278 9.19027C3.5182 9.3312 2.94722 9.35187 2.39305 9.25072C2.86384 10.6549 4.22998 11.6764 5.8475 11.7061C4.5821 12.6524 2.98781 13.2184 1.25483 13.2184C0.960153 13.2181 0.66574 13.2015 0.373047 13.1689C2.00943 14.1713 3.95365 14.7571 6.04185 14.7571C12.8438 14.7571 16.5627 9.37118 16.5627 4.70056C16.5627 4.54779 16.5627 4.39502 16.5513 4.24335C17.2749 3.74295 17.8998 3.12372 18.3969 2.41449H18.3981Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+          </div>
+          <div>
+            “Snoop Dogg Playing The Wildly Entertaining ‘SOS’ Is Ridiculous.”
+          </div>
+          <div>
+            <p style="color: rgba(255, 255, 255, 0.5)">December 24, 2018</p>
+          </div>
+        </div>
+        <!-- akhir quotes -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- page 6 -->
+<div class="image-6">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-sm-12">
+        <img src="./assets/assets/image.png" alt="" style="width: 250px" />
+      </div>
+      <div class="col-lg-6 col-sm-12 text-white">
+        <h2>Want to stay in touch?</h2>
+
+        <h1 style="width: 65px">NEWSLETTER SUBSCRIBE</h1>
+        <p>
+          In order to start receiving our news, all you have to do is enter your
+          email address. Everything else will be taken care of by us. We will
+          send you emails containing information about game. We don’t spam.
+        </p>
+        <div class="row g-lg-5">
+          <div class="col-md">
+            <input
+              type="password"
+              class="form-control"
+              id="inputPassword2"
+              placeholder="Your email address"
+              style="background: rgba(255, 255, 255, 0.08)"
+            />
+          </div>
+          <div class="col-md">
+            <button type="submit" class="btn btn-warning fw-bold mb-3">
+              Subscribe now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <ul class="list-inline text-white d-flex justify-content-center">
+        <li class="mx-3">
+          <h6>MAIN</h6>
+        </li>
+        <li class="mx-3">
+          <h6>ABOUT</h6>
+        </li>
+        <li class="mx-3">
+          <h6>GAME FEATURES</h6>
+        </li>
+        <li class="mx-3">
+          <h6>SYSTEM REQUIRMENTS</h6>
+        </li>
+        <li class="mx-3">
+          <h6>QUOTES</h6>
+        </li>
+        <li class="mx-3">
+          <img src="./assets/assets/facebook.svg" alt="" />
+        </li>
+        <li class="mx-3">
+          <img src="./assets/assets/twitter.svg" alt="" />
+        </li>
+        <li class="mx-3">
+          <img src="./assets/assets/Vector.svg" alt="" />
+        </li>
+        <li class="mx-3">
+          <img src="./assets/assets/twitch.svg" alt="" />
+        </li>
+      </ul>
+      <hr class="text-white" />
+      <ul class="list-inline text-white d-flex justify-content-around">
+        <li style="color: rgba(255, 255, 255, 1)">
+          &copy 2018 Your Games, Inc. All Rights Reserved
+        </li>
+        <li style="color: rgba(255, 255, 255, 1)">
+          Privacy Policy | Terms of Services | Code of Conduct
+        </li>
+      </ul>
+    </footer>
+  </div>
+</div>
+<%- include("partials/footer") %>
