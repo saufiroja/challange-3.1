@@ -2,6 +2,7 @@ const express = require("express");
 const authRoutes = require("./routes/authRoutes");
 const cookieParser = require("cookie-parser");
 const database = require("./data/db.json");
+const { requireAuth, currentUser } = require("./middleware/authMiddleware");
 
 const app = express();
 const port = 3000;
@@ -14,11 +15,13 @@ app.use(express.json());
 // view engine
 app.set("view engine", "ejs");
 
+app.get("*", currentUser);
+
 app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.get("/game", (req, res) => {
+app.get("/game", requireAuth, (req, res) => {
   res.render("game");
 });
 
