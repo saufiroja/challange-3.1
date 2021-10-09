@@ -97,3 +97,10 @@ module.exports.login_post = (req, res) => {
     res.status(400).json({ errors });
   }
 };
+
+// log out get
+
+module.exports.logout_get = (req, res) => {
+  res.cookie("jwt", "", { maxAge: 1 });
+  res.redirect("/");
+};

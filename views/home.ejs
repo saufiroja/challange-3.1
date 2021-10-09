@@ -36,21 +36,21 @@ style="opacity: 0.8"
       </li>
     </ul>
     <ul class="navbar-nav ms-auto">
-
-          <li class="nav-item ms-3" style="color: white; padding-top: 7px;">
-        
-          </li>
-          <li class="nav-item ms-3">
-            <a class="nav-link" href="/logout">LOG OUT</a>
-          </li>
-    
-          <li class="nav-item ms-3">
-            <a class="nav-link" href="/signup">SIGN UP</a>
-          </li>
-          <li class="nav-item ms-3">
-            <a class="nav-link" href="/login">LOGIN</a>
-          </li>
-
+      <% if(user) { %> 
+        <li class="nav-item ms-3" style="color: white; padding-top: 7px;">
+          Hello, Selamat Datang
+        </li>
+        <li class="nav-item ms-3">
+          <a class="nav-link" href="/logout">LOG OUT</a>
+        </li>
+    <% } else { %> 
+        <li class="nav-item ms-3">
+          <a class="nav-link" href="/signup">SIGN UP</a>
+        </li>
+        <li class="nav-item ms-3">
+          <a class="nav-link" href="/login">LOGIN</a>
+        </li>
+    <% } %> 
     </ul>
   </div>
 </div>
