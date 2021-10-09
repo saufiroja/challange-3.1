@@ -1,3 +1,68 @@
+.navbar {
+  position: absolute;
+  width: 100%;
+}
+
+.bg-image {
+  background-image: url(./assets/assets/main-bg.jpg);
+  background-size: cover;
+  height: 1075px;
+  /* background-repeat: round; */
+}
+
+.image-2 {
+  background-image: url(./assets/assets/the-games-bg.jpg);
+  background-size: cover;
+  height: 969px;
+  /* background-repeat: round; */
+}
+
+.image-3 {
+  background-image: url(./assets/assets/features.jpg);
+  background-size: cover;
+  height: 969px;
+  /* background-repeat: round; */
+}
+
+.image-4 {
+  background-image: url(./assets/assets/Group\ 2.jpg);
+  background-size: cover;
+  height: 969px;
+  /* background-repeat: round; */
+}
+
+.image-5 {
+  background-image: url(./assets/assets/bg\ image\ 3.svg);
+  background-size: cover;
+  height: 1369px;
+}
+
+.image-6 {
+  background-image: url(./assets/assets/Rectangle\ 4.3.png);
+  background-size: cover;
+  height: 969px;
+  /* background-repeat: round; */
+}
+
+li.circle {
+  list-style-type: circle;
+  margin-top: -35px;
+}
+
+.list-style p {
+  border-left: 1px solid rgb(255, 255, 255);
+  padding: 15px;
+  position: relative;
+  left: -16px;
+  top: -20px;
+}
+
+@media (min-width: 992px) {
+  .image-6 {
+    height: 700px;
+  }
+}
+
 form {
   width: 360px;
   margin: 15rem auto;
