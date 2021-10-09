@@ -1,14 +1,10 @@
 const express = require("express");
 const authRoutes = require("./routes/authRoutes");
 const cookieParser = require("cookie-parser");
-const datajson = require("./data/db.json");
+const database = require("./data/db.json");
 
 const app = express();
 const port = 3000;
-
-// connect to json
-const data = datajson;
-// console.log(data);
 
 // middleware
 app.use(express.static("public"));
@@ -19,7 +15,17 @@ app.use(express.json());
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("home");
+});
+
+app.get("/game", (req, res) => {
+  res.render("game");
+});
+
+app.get("/json", (req, res) => {
+  res.render("json", {
+    database,
+  });
 });
 
 app.use(authRoutes);
