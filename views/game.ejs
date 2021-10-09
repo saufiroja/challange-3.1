@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="game.css" />
+    <title>Suit Game</title>
+  </head>
+  <body>
+    <section>
+      <div class="back">
+        <img src="./assets/_.png" alt="" />
+      </div>
+      <div class="logo">
+        <img src="./assets/logo 1.png" alt="" />
+      </div>
+      <div class="text">
+        <h1>ROCK PAPER SCISSORS</h1>
+      </div>
+    </section>
+
+    <!-- Player -->
+    <main>
+      <div class="player">
+        <h1>PLAYER 1</h1>
+      </div>
+      <div class="area-player">
+        <ul>
+          <li>
+            <img src="../public/assets/assetsgame/batu.png" class="batu" />
+          </li>
+          <li>
+            <img
+              src="../public/assets/assetsgame/gunting.png"
+              class="gunting"
+            />
+          </li>
+          <li>
+            <img src="../public/assets/assetsgame/kertas.png" class="kertas" />
+          </li>
+        </ul>
+      </div>
+
+      <div class="vs">
+        <img src="../public/assets/assetsgame/VS.png" alt="" />
+      </div>
+
+      <!-- com -->
+      <div class="com">
+        <h1>COM</h1>
+      </div>
+      <div class="area-com">
+        <ul>
+          <li>
+            <img src="../public/assets/assetsgame/batu.png" />
+          </li>
+          <li>
+            <img src="../public/assets/assetsgame/gunting.png" />
+          </li>
+          <li>
+            <img src="../public/assets/assetsgame/kertas.png" />
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <!-- refresh -->
+    <footer onclick="refresh()" style="cursor: pointer">
+      <img src="../public/assets/assetsgame/refresh 2.png" alt="" />
+    </footer>
+
+    <script>
+      const getPilihanCom = () => {
+        // Com
+        const com = Math.random();
+
+        // random
+        if (com < 0.34) return "gunting";
+        if (com >= 0.34 && com < 0.67) return "batu";
+        return "kertas";
+      };
+
+      const getResult = (player, com) => {
+        // rules
+        if (player == com) return "DRAW";
+        if (player == "gunting")
+          return com == "batu" ? "COM WIN" : "PLAYER 1 WIN";
+        if (player == "batu")
+          return com == "gunting" ? "PLAYER 1 WIN" : "COM WIN";
+        if (player == "kertas")
+          return com == "gunting" ? "COM WIN" : "PLAYER 1 WIN";
+      };
+
+      const pilihan = document.querySelectorAll("li img");
+      pilihan.forEach((choice) => {
+        choice.addEventListener("click", () => {
+          const pilihanCom = getPilihanCom();
+          const pilihanPlayer = choice.className;
+          const hasil = getResult(pilihanPlayer, pilihanCom);
+
+          const imgCom = document.querySelector(".area-com");
+          imgCom.setAttribute("src", `./assets/${pilihanCom}.png`);
+
+          const info = document.querySelector(".vs");
+          info.innerHTML = hasil;
+
+          alert(`Player 1 memilih ${pilihanPlayer} Com memilih ${pilihanCom}
+        Maka hasilnya ${hasil}
+            `);
+        });
+      });
+
+      const refresh = () => {
+        document.location.reload();
+      };
+    </script>
+  </body>
+</html>
